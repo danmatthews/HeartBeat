@@ -2,6 +2,12 @@
 
 **Heartbeat** is a simple (& responsive) site-tracking statusboard (and twitter dashboard) that allows you to set up a list of sites and servers to check, and will alert you via email (and a visual prompt on-screen) when a site does not respond with a satisfiable response (usually a slow response time or a none-200 status code).
 
+## Features
+
+- See a list of your sites with instant highlighting of those experiencing problems.
+- Email alerts when a site goes down and comes back up.
+- Optional twitter feed to the side of the statusboard, using whatever search term you'd like.
+
 ## Installation
 
 ### Setup the DB & Dependencies
