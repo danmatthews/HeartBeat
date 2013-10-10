@@ -1,0 +1,657 @@
+/*
+  Bootstrap v1.1
+  Variables and mixins to bootstrap any new web development project.
+*/
+/* Variables
+-------------------------------------------------- */
+/* Mixins
+-------------------------------------------------- */
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  content: ".";
+}
+.center-block {
+  display: block;
+  margin: 0 auto;
+}
+.container {
+  width: 940px;
+  margin: 0 auto;
+  zoom: 1;
+}
+.container:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  content: ".";
+}
+#flexbox .display-box {
+  display: -moz-box;
+  display: -webkit-box;
+  display: box;
+}
+#reset .global-reset html,
+#reset .global-reset body,
+#reset .global-reset div,
+#reset .global-reset span,
+#reset .global-reset applet,
+#reset .global-reset object,
+#reset .global-reset iframe,
+#reset .global-reset h1,
+#reset .global-reset h2,
+#reset .global-reset h3,
+#reset .global-reset h4,
+#reset .global-reset h5,
+#reset .global-reset h6,
+#reset .global-reset p,
+#reset .global-reset blockquote,
+#reset .global-reset pre,
+#reset .global-reset a,
+#reset .global-reset abbr,
+#reset .global-reset acronym,
+#reset .global-reset address,
+#reset .global-reset big,
+#reset .global-reset cite,
+#reset .global-reset code,
+#reset .global-reset del,
+#reset .global-reset dfn,
+#reset .global-reset em,
+#reset .global-reset img,
+#reset .global-reset ins,
+#reset .global-reset kbd,
+#reset .global-reset q,
+#reset .global-reset s,
+#reset .global-reset samp,
+#reset .global-reset small,
+#reset .global-reset strike,
+#reset .global-reset strong,
+#reset .global-reset sub,
+#reset .global-reset sup,
+#reset .global-reset tt,
+#reset .global-reset var,
+#reset .global-reset b,
+#reset .global-reset u,
+#reset .global-reset i,
+#reset .global-reset center,
+#reset .global-reset dl,
+#reset .global-reset dt,
+#reset .global-reset dd,
+#reset .global-reset ol,
+#reset .global-reset ul,
+#reset .global-reset li,
+#reset .global-reset fieldset,
+#reset .global-reset form,
+#reset .global-reset label,
+#reset .global-reset legend,
+#reset .global-reset table,
+#reset .global-reset caption,
+#reset .global-reset tbody,
+#reset .global-reset tfoot,
+#reset .global-reset thead,
+#reset .global-reset tr,
+#reset .global-reset th,
+#reset .global-reset td,
+#reset .global-reset article,
+#reset .global-reset aside,
+#reset .global-reset canvas,
+#reset .global-reset details,
+#reset .global-reset embed,
+#reset .global-reset figure,
+#reset .global-reset figcaption,
+#reset .global-reset footer,
+#reset .global-reset header,
+#reset .global-reset hgroup,
+#reset .global-reset menu,
+#reset .global-reset nav,
+#reset .global-reset output,
+#reset .global-reset ruby,
+#reset .global-reset section,
+#reset .global-reset summary,
+#reset .global-reset time,
+#reset .global-reset mark,
+#reset .global-reset audio,
+#reset .global-reset video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+#reset .global-reset body {
+  line-height: 1;
+}
+#reset .global-reset ol,
+#reset .global-reset ul {
+  list-style: none;
+}
+#reset .global-reset table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+#reset .global-reset caption,
+#reset .global-reset th,
+#reset .global-reset td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+#reset .global-reset q,
+#reset .global-reset blockquote {
+  quotes: none;
+}
+#reset .global-reset q:before,
+#reset .global-reset blockquote:before,
+#reset .global-reset q:after,
+#reset .global-reset blockquote:after {
+  content: "";
+  content: none;
+}
+#reset .global-reset a img {
+  border: none;
+}
+#reset .global-reset article,
+#reset .global-reset aside,
+#reset .global-reset details,
+#reset .global-reset figcaption,
+#reset .global-reset figure,
+#reset .global-reset footer,
+#reset .global-reset header,
+#reset .global-reset hgroup,
+#reset .global-reset menu,
+#reset .global-reset nav,
+#reset .global-reset section {
+  display: block;
+}
+#reset .reset-box-model {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+#reset .reset-font {
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+#reset .reset-focus {
+  outline: 0;
+}
+#reset .reset-body {
+  line-height: 1;
+}
+#reset .reset-list-style {
+  list-style: none;
+}
+#reset .reset-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+#reset .reset-table-cell {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+#reset .reset-quotation {
+  quotes: none;
+}
+#reset .reset-quotation:before,
+#reset .reset-quotation:after {
+  content: "";
+  content: none;
+}
+#reset .reset-image-anchor-border {
+  border: none;
+}
+#reset .reset-html5 article,
+#reset .reset-html5 aside,
+#reset .reset-html5 details,
+#reset .reset-html5 figcaption,
+#reset .reset-html5 figure,
+#reset .reset-html5 footer,
+#reset .reset-html5 header,
+#reset .reset-html5 hgroup,
+#reset .reset-html5 menu,
+#reset .reset-html5 nav,
+#reset .reset-html5 section {
+  display: block;
+}
+html {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  background: url(http://i.imgur.com/QGuU5l7.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+html.tweetup {
+  background: #ffffff;
+}
+html.tweetup .pace .pace-progress {
+  background: #f0f0f0;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  height: 2px;
+  -webkit-transition: width 1s;
+  -moz-transition: width 1s;
+  -o-transition: width 1s;
+  transition: width 1s;
+}
+html.tweetup .pace-inactive {
+  display: none;
+}
+body {
+  margin: 60px auto 60px auto;
+}
+html.tweetup body {
+  margin: 0;
+  overflow-y: scroll;
+}
+#overlay {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  text-indent: -120%;
+  left: 0px;
+  background: #ffffff url(../img/logo_orange.png) center center no-repeat;
+  background: url(http://i.imgur.com/GjxWMvA.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-size: 48px;
+  color: #FFFFFF;
+  line-height: 500px;
+  text-align: center;
+}
+#tweetup_container {
+  -webkit-font-smoothing: antialiased;
+  font-size: 26px;
+}
+#tweetup_container h2.hashtag {
+  background: #0F9CB1;
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+  padding: 30px 0;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 60px;
+}
+#tweetup_container ul.tweets {
+  width: 1800px;
+  margin: 0 auto;
+  padding: 0;
+}
+#tweetup_container ul.tweets li {
+  padding: 40px 0 15px 0;
+  list-style: none;
+  border-bottom: 1px solid #eee;
+}
+#tweetup_container ul.tweets li img.profile_image {
+  border-radius: 50px;
+  float: right;
+  height: 100px;
+  width: 100px;
+  margin: 0 0 40px 40px;
+}
+#tweetup_container ul.tweets li div.twitter_image img {
+  height: 150px;
+}
+#tweetup_container ul.tweets li h5 {
+  font-size: 42px;
+  font-weight: normal;
+  color: #179CB3;
+  -webkit-font-smoothing: antialiased;
+  margin: 0 0 15px 0;
+}
+#tweetup_container ul.tweets li h5 small {
+  color: #666666;
+  font-size: 24px;
+}
+#tweetup_container ul.tweets li .tweet-text {
+  margin: 0 0 42px 0;
+}
+#container {
+  margin: 0px 0px 0 auto;
+  overflow: hidden;
+  width: 1800px;
+  margin: 0 auto;
+}
+#container #servers {
+  width: auto;
+  margin: 0 390px 0 0px;
+}
+#container #servers ul {
+  padding: 0;
+  margin: 0;
+}
+#container #servers ul li {
+  list-style: none;
+  margin: 0 0 25px 0;
+}
+#container #servers ul li:hover ul {
+  display: block;
+}
+#container #servers ul li.no-results {
+  border: 1px solid #eee;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  text-align: center;
+  color: #46a546;
+  font-size: 21px;
+  height: 400px;
+  line-height: 400px;
+}
+#container #servers ul li ul {
+  color: #ffffff;
+  display: none;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0 0 0px;
+}
+#container #servers ul li ul li {
+  margin: 0;
+  padding: 0;
+  background: #DB5251;
+  padding: 10px 40px;
+}
+#container #servers ul li ul li small {
+  color: #eca6a6;
+}
+#container #servers ul li.site,
+#container #servers ul li.server {
+  margin: 0 0 0 0;
+}
+#container #servers ul li.site h4,
+#container #servers ul li.server h4 {
+  height: 94px;
+  line-height: 94px;
+  border-bottom: 1px solid #409c4e;
+  border-top: 1px solid #7ac886;
+  font-size: 32px;
+  font-weight: normal;
+  margin: 0 0 0 0;
+  background: #56B965;
+  background-color: #56b965;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#68c075), to(#56b965));
+  /* Konqueror */
+
+  background-image: -moz-linear-gradient(#68c075, #56b965);
+  /* FF 3.6+ */
+
+  background-image: -ms-linear-gradient(#68c075, #56b965);
+  /* IE10 */
+
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #68c075), color-stop(100%, #56b965));
+  /* Safari 4+, Chrome 2+ */
+
+  background-image: -webkit-linear-gradient(#68c075, #56b965);
+  /* Safari 5.1+, Chrome 10+ */
+
+  background-image: -o-linear-gradient(#68c075, #56b965);
+  /* Opera 11.10 */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#68c075', endColorstr='#56b965', GradientType=0);
+  /* IE6 & IE7 */
+
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#68c075', endColorstr='#56b965', GradientType=0)";
+  /* IE8+ */
+
+  background-image: linear-gradient(#68c075, #56b965);
+  /* the standard */
+
+  color: #FFFFFF;
+  padding: 0 40px;
+}
+#container #servers ul li.site h4 small,
+#container #servers ul li.server h4 small {
+  color: #c2e6c8;
+  display: inline;
+}
+#container #servers ul li.site h4.error,
+#container #servers ul li.server h4.error {
+  background: #DB5251;
+  background-color: #db5251;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#df6766), to(#db5251));
+  /* Konqueror */
+
+  background-image: -moz-linear-gradient(#df6766, #db5251);
+  /* FF 3.6+ */
+
+  background-image: -ms-linear-gradient(#df6766, #db5251);
+  /* IE10 */
+
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #df6766), color-stop(100%, #db5251));
+  /* Safari 4+, Chrome 2+ */
+
+  background-image: -webkit-linear-gradient(#df6766, #db5251);
+  /* Safari 5.1+, Chrome 10+ */
+
+  background-image: -o-linear-gradient(#df6766, #db5251);
+  /* Opera 11.10 */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#df6766', endColorstr='#db5251', GradientType=0);
+  /* IE6 & IE7 */
+
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#df6766', endColorstr='#db5251', GradientType=0)";
+  /* IE8+ */
+
+  background-image: linear-gradient(#df6766, #db5251);
+  /* the standard */
+
+  color: #ffffff;
+  border-bottom: 1px solid #ce2c2b;
+  border-top: 1px solid #e47c7b;
+}
+#container #servers ul li.site h4.error small,
+#container #servers ul li.server h4.error small {
+  color: #eca6a6;
+}
+#container #servers ul li.site h4.partial,
+#container #servers ul li.server h4.partial {
+  background: #F0AE5A;
+  background-color: #f0ae5a;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#f2b971), to(#f0ae5a));
+  /* Konqueror */
+
+  background-image: -moz-linear-gradient(#f2b971, #f0ae5a);
+  /* FF 3.6+ */
+
+  background-image: -ms-linear-gradient(#f2b971, #f0ae5a);
+  /* IE10 */
+
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f2b971), color-stop(100%, #f0ae5a));
+  /* Safari 4+, Chrome 2+ */
+
+  background-image: -webkit-linear-gradient(#f2b971, #f0ae5a);
+  /* Safari 5.1+, Chrome 10+ */
+
+  background-image: -o-linear-gradient(#f2b971, #f0ae5a);
+  /* Opera 11.10 */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2b971', endColorstr='#f0ae5a', GradientType=0);
+  /* IE6 & IE7 */
+
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2b971', endColorstr='#f0ae5a', GradientType=0)";
+  /* IE8+ */
+
+  background-image: linear-gradient(#f2b971, #f0ae5a);
+  /* the standard */
+
+  color: #FFFFFF;
+  border-bottom: 1px solid #d17d13;
+  border-top: 1px solid #f4c589;
+}
+#container #servers ul li.site h4.partial small,
+#container #servers ul li.server h4.partial small {
+  color: #f9dcb8;
+}
+#container #servers ul li.site p,
+#container #servers ul li.server p {
+  margin: 0;
+  font-size: 12px;
+}
+#container #servers ul li.site p span.date,
+#container #servers ul li.server p span.date {
+  color: #666;
+}
+#container #servers h3 {
+  border-bottom: 1px solid #d5d5d5;
+  padding: 0 0 8px 0;
+  margin: 0 0 15px 0;
+  font-size: 22px;
+  line-height: 18px;
+}
+#container #servers h3.loading {
+  background: grey;
+}
+#container #sidebar {
+  float: right;
+  width: 390px;
+  margin: 0 0 0 0px;
+  font-size: 14px;
+  line-height: 21px;
+}
+#container #sidebar #about {
+  margin: 0 0 45px 0;
+}
+#container #sidebar #about h3 {
+  margin: 0 0 12px 0;
+  padding: 0 0 8px 0;
+  font-size: 22px;
+  border-bottom: 1px solid #d5d5d5;
+  line-height: 18px;
+}
+#container #sidebar #twitter ul {
+  padding: 0;
+  margin: 0;
+}
+#container #sidebar #twitter ul li {
+  list-style: none;
+  height: 150px;
+  border-bottom: 1px solid #46b8da;
+  border-top: 1px solid #85d0e7;
+  margin: 0 0 0px 0;
+  background: #5BC0DE;
+  background-color: #5bc0de;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#70c8e2), to(#5bc0de));
+  /* Konqueror */
+
+  background-image: -moz-linear-gradient(#70c8e2, #5bc0de);
+  /* FF 3.6+ */
+
+  background-image: -ms-linear-gradient(#70c8e2, #5bc0de);
+  /* IE10 */
+
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #70c8e2), color-stop(100%, #5bc0de));
+  /* Safari 4+, Chrome 2+ */
+
+  background-image: -webkit-linear-gradient(#70c8e2, #5bc0de);
+  /* Safari 5.1+, Chrome 10+ */
+
+  background-image: -o-linear-gradient(#70c8e2, #5bc0de);
+  /* Opera 11.10 */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70c8e2', endColorstr='#5bc0de', GradientType=0);
+  /* IE6 & IE7 */
+
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#70c8e2', endColorstr='#5bc0de', GradientType=0)";
+  /* IE8+ */
+
+  background-image: linear-gradient(#70c8e2, #5bc0de);
+  /* the standard */
+
+  color: white;
+  padding: 20px;
+}
+#container #sidebar #twitter ul li img {
+  float: right;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  margin: 0 0 12px 12px;
+  width: 48px;
+  height: 48px;
+}
+#container #sidebar #twitter ul li h5 {
+  font-size: 21px;
+  font-weight: normal;
+  margin: 0 0 20px 0;
+  text-transform: capitalize;
+}
+@media screen and (max-width: 1799px) {
+  body {
+    padding: 20px;
+    margin: 0 0 0 0;
+  }
+  #container {
+    width: auto;
+    overflow: hidden;
+    margin: 0 0 0 0;
+  }
+  #container #servers {
+    width: 70%;
+    margin: 0 0 0 0;
+    float: left;
+  }
+  #container #servers ul li.site h4,
+  #container #servers ul li.server h4 {
+    height: auto;
+    line-height: 44px;
+    padding: 20px 20px;
+  }
+  #container #servers ul li.site h4 small,
+  #container #servers ul li.server h4 small {
+    display: block;
+  }
+  #container #sidebar {
+    margin: 0 0 0 0;
+    float: right;
+    width: 30%;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  #container #sidebar #twitter ul li {
+    height: auto;
+  }
+  #container #sidebar #twitter ul li img {
+    float: none;
+    margin: 0 0 10px 0;
+  }
+}
+@media screen and (max-width: 720px) {
+  #container #sidebar {
+    display: none;
+  }
+  #container #servers {
+    width: 100%;
+  }
+  #container #servers ul li.site h4,
+  #container #servers ul li.server h4 {
+    font-size: 22px;
+    line-height: 22px;
+    height: auto;
+    padding: 25px 20px;
+  }
+  #container #servers ul li.site h4 small,
+  #container #servers ul li.server h4 small {
+    color: #c2e6c8;
+    display: block;
+  }
+}

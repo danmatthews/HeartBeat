@@ -1,0 +1,57 @@
+{% extends 'layouts/index.twig' %}
+{% block htmlclass %}statusboard{% endblock %}
+{% block application_js %}
+		<script type="text/javascript" src="{{ asset('assets/js/app.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+<script type="text/x-handlebars">
+
+<!-- <div id="overlay">Refreshing.</div> -->
+		<div id="container">
+			<div id="sidebar">
+				<div id="twitter">
+					{% verbatim %}
+					{{ view App.TweetView }}
+					{% endverbatim %}
+				</div>
+			</div>
+			<div id="servers" class="block">
+				<ul>
+					{% verbatim %}
+					{{ view App.ServerView }}
+					{% endverbatim %}
+				</ul>
+			</div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="twitter">
+	<ul class="tweets">
+		{% verbatim %}
+		{{#each view.tweets}}
+			<li data-timestamp="{{ timestamp }}">
+				<img {{bind-attr src=user.profile_image_url}} class="profile_image">
+				<div class="tweet-info">
+					<h5>{{ user.name }}</h5>
+					<div class="tweet-text">
+						{{ text }}
+					</div>
+				</div>
+			</li>
+		{{/each}}
+		{% endverbatim %}
+		</ul>
+</script>
+
+<script type="text/x-handlebars" data-template-name="servers">
+	{% verbatim %}
+	{{#each view.servers}}
+		<li class="server">
+			<h4 {{bind-attr class="alert_status"}}>{{ name }} <small>{{ alert_text }}</small></h4>
+		</li>
+	{{/each}}
+	{% endverbatim %}
+</script>
+
+{% endblock %}

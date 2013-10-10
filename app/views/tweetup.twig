@@ -1,0 +1,44 @@
+{% extends 'layouts/index.twig' %}
+{% block htmlclass %}tweetup{% endblock %}
+{% block application_js %}
+		<script type="text/javascript" src="{{ asset('assets/js/tweetup_app.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+<script type="text/x-handlebars">
+		<div id="tweetup_container">
+				<h2 class="hashtag">#CarlisleTweetup</h2>
+				<div id="twitter">
+					{% verbatim %}
+					{{ view App.TweetupView }}
+					{% endverbatim %}
+				</div>
+			</div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="tweetup_twitter">
+	<ul class="tweets">
+		{% verbatim %}
+		{{#each view.tweets}}
+			<li data-timestamp="{{ timestamp }}">
+				<img {{bind-attr src=user.profile_image_url}} class="profile_image">
+				<div class="tweet-info">
+					<h5>{{ user.name }} <small>(@{{user.screen_name}})</small></h5>
+					<div class="tweet-text">
+						{{ text }}
+					</div>
+
+					{{#each entities.media}}
+						<div class="twitter_image">
+							<img {{bind-attr src=media_url }} />
+						</div>
+					{{/each}}
+				</div>
+			</li>
+		{{/each}}
+		{% endverbatim %}
+		</ul>
+</script>
+
+{% endblock %}

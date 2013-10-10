@@ -1,0 +1,38 @@
+{% if input.body_only != 1  %}
+<!DOCTYPE html>
+<html class="{% block htmlclass %}html{% endblock %}">
+	<head>
+
+		<meta charset="utf-8">
+		<title>
+			Hydrant Statusboard
+		</title>
+		<script type="text/javascript" src="{{ asset('assets/js/pace.js') }}"></script>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="{{ asset('assets/img/apple-touch-icon.png') }}" />
+		<link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/img/apple-touch-icon-57x57.png') }}" />
+		<link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/img/apple-touch-icon-72x72.png') }}" />
+		<link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/img/apple-touch-icon-114x114.png') }}" />
+		<link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/img/apple-touch-icon-144x144.png') }}" />
+		<link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/img/apple-touch-icon-60x60.png') }}" />
+		<link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/img/apple-touch-icon-120x120.png') }}" />
+		<link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/img/apple-touch-icon-76x76.png') }}" />
+		<link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/img/apple-touch-icon-152x152.png') }}" />
+
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />
+		<script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('assets/js/handlebars.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('assets/js/ember.js') }}"></script>
+		{% block application_js %}
+			<script type="text/javascript" src="{{ asset('assets/js/app.js') }}"></script>
+		{% endblock %}
+	</head>
+	<body>
+	{% endif %}
+		{{ block('content') }}
+{% if input.body_only != 1  %}
+	</body>
+</html>
+{% endif %}

@@ -1,0 +1,60 @@
+@media screen and (max-width: 1799px) {
+  body {
+    padding: 20px;
+    margin: 0 0 0 0;
+  }
+  #container {
+    width: auto;
+    overflow: hidden;
+    margin: 0 0 0 0;
+  }
+  #container #servers {
+    width: 70%;
+    margin: 0 0 0 0;
+    float: left;
+  }
+  #container #servers ul li.site h4,
+  #container #servers ul li.server h4 {
+    height: auto;
+    line-height: 44px;
+    padding: 20px 20px;
+  }
+  #container #servers ul li.site h4 small,
+  #container #servers ul li.server h4 small {
+    display: block;
+  }
+  #container #sidebar {
+    margin: 0 0 0 0;
+    float: right;
+    width: 30%;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  #container #sidebar #twitter ul li {
+    height: auto;
+  }
+  #container #sidebar #twitter ul li img {
+    float: none;
+    margin: 0 0 10px 0;
+  }
+}
+@media screen and (max-width: 720px) {
+  #container #sidebar {
+    display: none;
+  }
+  #container #servers {
+    width: 100%;
+  }
+  #container #servers ul li.site h4,
+  #container #servers ul li.server h4 {
+    font-size: 22px;
+    line-height: 22px;
+    height: auto;
+    padding: 25px 20px;
+  }
+  #container #servers ul li.site h4 small,
+  #container #servers ul li.server h4 small {
+    color: #c2e6c8;
+    display: block;
+  }
+}

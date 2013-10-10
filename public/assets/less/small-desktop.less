@@ -1,0 +1,81 @@
+@media screen and (max-width: 1799px) {
+	html {
+	}
+
+	body {
+		padding :20px;
+		margin: 0 0 0 0;
+	}
+
+	#container {
+		width:auto;
+		overflow:hidden;
+		margin : 0 0 0 0;
+		#servers {
+			width: 70%;
+			margin: 0 0 0 0;
+			float: left;
+			ul {
+				li {
+					&.site,
+					&.server {
+						h4 {
+							height: auto;
+							line-height: 44px;
+							padding: 20px 20px;
+							small {
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+		#sidebar {
+			margin: 0 0 0 0;
+			float: right;
+			width: 30%;
+			font-size:14px;
+			line-height:21px;
+			#twitter {
+				ul {
+					li {
+						height: auto;
+						img {
+							float:none;
+							margin: 0 0 10px 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 720px) {
+	#container {
+		#sidebar {
+			display: none;
+		}
+		#servers {
+			width: 100%;
+			ul {
+				li {
+					&.site,
+					&.server {
+						h4 {
+							font-size:22px;
+							line-height:22px;
+							height: auto;
+							padding: 25px 20px;
+							small {
+								color:lighten(#56B965, 30%);
+								display:block;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

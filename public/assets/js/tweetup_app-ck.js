@@ -1,0 +1,2 @@
+// Create the ember application
+App=Ember.Application.create();App.SlideInterval;App.TweetupView=Ember.View.create({templateName:"tweetup_twitter"});var checkTweets=function(){jQuery.getJSON("tweetuptweets",function(e){App.TweetupView.set("tweets",e)})};checkTweets();var interval=3e4;setInterval(function(){checkTweets()},interval);
