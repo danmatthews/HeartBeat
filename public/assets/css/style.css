@@ -234,30 +234,9 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
-html.tweetup {
-  background: #ffffff;
-}
-html.tweetup .pace .pace-progress {
-  background: #f0f0f0;
-  position: fixed;
-  z-index: 2000;
-  top: 0;
-  left: 0;
-  height: 2px;
-  -webkit-transition: width 1s;
-  -moz-transition: width 1s;
-  -o-transition: width 1s;
-  transition: width 1s;
-}
-html.tweetup .pace-inactive {
-  display: none;
-}
 body {
-  margin: 60px auto 60px auto;
-}
-html.tweetup body {
-  margin: 0;
-  overflow-y: scroll;
+  margin: 0px auto 0px auto;
+  padding: 0px;
 }
 #overlay {
   position: fixed;
@@ -326,9 +305,9 @@ html.tweetup body {
   margin: 0 0 42px 0;
 }
 #container {
-  margin: 0px 0px 0 auto;
+  margin: 0px auto 0 auto;
   overflow: hidden;
-  width: 1800px;
+  width: auto;
   margin: 0 auto;
 }
 #container #servers {
@@ -597,7 +576,7 @@ html.tweetup body {
 }
 @media screen and (max-width: 1799px) {
   body {
-    padding: 20px;
+    padding: 0px;
     margin: 0 0 0 0;
   }
   #container {

@@ -2,7 +2,7 @@
 
 class DatabaseSeeder extends Seeder {
 
-	public $sites = Config::get('sites');
+	public $sites;
 
 	/**
 	 * Run the database seeds.
@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
+		$this->sites = Config::get('sites');
 		Eloquent::unguard();
 		foreach ($this->sites as $server => $sites) {
 			$newServer = new Server(array('name' => $server));

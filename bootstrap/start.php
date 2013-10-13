@@ -27,8 +27,7 @@ $app->redirectIfTrailingSlash();
 */
 
 $env = $app->detectEnvironment(array(
-	'local' => array('Dans-MacBook-Pro.local'),
-	'live' => array('hydrantdev.co.uk','office.hydrant.co.uk'),
+	'local' => array(),
 ));
 
 /*

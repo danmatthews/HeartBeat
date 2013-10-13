@@ -15,6 +15,11 @@ class CheckCommand extends Command {
 	protected $name = 'check';
 
 	/**
+	 * Heartbeat config values.
+	 */
+	protected $hconfig;
+
+	/**
 	 * The console command description.
 	 *
 	 * @var string
@@ -29,6 +34,7 @@ class CheckCommand extends Command {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->hconfig = Config::get('heartbeat');
 	}
 
 	/**
@@ -50,7 +56,7 @@ class CheckCommand extends Command {
 
 				$client = new Client();
 
-				$client->setUserAgent('Hydrant HTTP Statusboard');
+				$client->setUserAgent('Heartbeat HTTP Statusboard');
 
 				$request = $client->get($site->url);
 
@@ -85,12 +91,12 @@ class CheckCommand extends Command {
 
 					// Send an email.
 					if ($this->inBusinessHours()) {
-						$this->error('Attempting to send an email to notify carlisle@hydrant.co.uk.');
+						$this->error("Attempting to send an email to notify {$this->hconfig['alert_email_to']}.");
 						Mail::send(
 							'emails.site_down',
 							array('site' => $site, 'date' => date("jS F Y : H:i:s")),
 							function($message) {
-								$message->to('carlisle@hydrant.co.uk')->subject('Site Down!');
+								$message->to($this->hconfig['alert_email_to'])->subject('Site Down!');
 							}
 						);
 					}
@@ -101,7 +107,7 @@ class CheckCommand extends Command {
 						'emails.site_up',
 						array('site' => $site, 'date' => date("jS F Y : H:i:s")),
 						function($message) {
-							$message->to('carlisle@hydrant.co.uk')->subject('Site Back Up!');
+							$message->to($this->hconfig['alert_email_to'])->subject('Site Back Up!');
 						}
 					);
 				}

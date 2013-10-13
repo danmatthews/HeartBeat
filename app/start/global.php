@@ -81,3 +81,16 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Heartbeat-specific setup.
+|--------------------------------------------------------------------------
+*/
+$custom_twitter = Config::get('heartbeat.twitter');
+
+// Replace These items.
+Config::set('twitter::CONSUMER_KEY', $custom_twitter['CONSUMER_KEY']);
+Config::set('twitter::CONSUMER_SECRET', $custom_twitter['CONSUMER_SECRET']);
+Config::set('twitter::ACCESS_TOKEN', $custom_twitter['ACCESS_TOKEN']);
+Config::set('twitter::ACCESS_TOKEN_SECRET', $custom_twitter['ACCESS_TOKEN_SECRET']);

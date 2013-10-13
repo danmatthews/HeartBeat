@@ -1,10 +1,8 @@
 <?php
 return array(
-	'Group / Server Name' => array(
-		'Site Name' => 'http://www.example.com',
-		'Site Name' => 'http://www.example.com',
-		'Site Name' => 'http://www.example.com',
-		'Site Name' => 'http://www.example.com',
-		'Site Name' => 'http://www.example.com',
+	'My Server' => array(
+		'My Blog' => 'http://danmatthews.me',
+		'Curlymoustache' => 'http://www.curlymoustache.com',
+        'Make A Drupal Module' => 'http://makeadrupalmodule.com',
 	),
 );

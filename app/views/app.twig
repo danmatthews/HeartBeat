@@ -48,7 +48,7 @@
 	{% verbatim %}
 	{{#each view.servers}}
 		<li class="server">
-			<h4 {{bind-attr class="alert_status"}}>{{ name }} <small>{{ alert_text }}</small></h4>
+			<h4 {{bind-attr class="alert_status"}}>{{ name }} ({{count}} sites)<small>{{ alert_text }}</small></h4>
 		</li>
 	{{/each}}
 	{% endverbatim %}

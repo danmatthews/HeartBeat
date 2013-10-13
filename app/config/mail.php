@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'dan@hydrant.co.uk', 'name' => "Hydrant Statusboard"),
+	'from' => array('address' => 'mail@example.com', 'name' => "Statusboard"),
 
 	/*
 	|--------------------------------------------------------------------------

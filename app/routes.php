@@ -35,6 +35,7 @@ Route::get('servers', function() {
 	return (DB::select(
 		"SELECT srv.name,
 		srv.id,
+		(SELECT count(*) FROM sites WHERE server_id = srv.id) as 'count',
 		IF ((SELECT count(*) FROM requests r WHERE r.http_status != 200 AND r.http_status > 0 AND r.deleted_at IS NULL AND r.site_id IN (SELECT s.id FROM sites s WHERE s.server_id = srv.id)) > 0, 'error', 'okay') as 'alert_status',
 		IF ((SELECT count(*) FROM requests r WHERE r.http_status != 200 AND r.http_status > 0 AND r.deleted_at IS NULL AND r.site_id IN (SELECT s.id FROM sites s WHERE s.server_id = srv.id)) > 0, 'Functioning with errors', 'Functioning normally') as 'alert_text'
 		   FROM servers srv
@@ -48,9 +49,12 @@ Route::get('tweets', function(){
 	{
 	    $tweets = Cache::get('tweets');
 	} else {
-		$tweets = Twitter::getSearch(array('q' => 'teamhydrant' ,'count' => 5));
-	    Cache::add('tweets', $tweets, 15);
+		$app_config = Config::get('heartbeat');
+		$tweets = Twitter::getSearch(array('q' => $app_config['twitter_search_term'] ,'count' => 5));
+	    if (isset($tweets->statuses)) { Cache::add('tweets', $tweets, 15); }
+	    else { return '[]'; }
 	}
+
 	return (array)$tweets->statuses;
 });
 
