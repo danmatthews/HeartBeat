@@ -10,6 +10,10 @@
 
 ## Installation
 
+### Edit The config file.
+
+Edit the file at `app/config/heartbeat.php` and fill in the details. Twitter values are required if you want to display tweets (twitter requests will silently fail otherwise).
+
 ### Setup the DB & Dependencies
 
 The application is built upon [Laravel 4](http://laravel.com) and requires `PHP 5.3` (this will soon be moving to 5.4), and also requires [Composer](http://getcomposer.org) to install dependencies.
